@@ -1,0 +1,33 @@
+{
+    "method": "POST",
+    "url": "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send",
+    "headers": {
+      "content-type": "application/json",
+      "x-rapidapi-host": "rapidprod-sendgrid-v1.p.rapidapi.com",
+      "x-rapidapi-key": "process.env.API_KEY",
+      "accept": "application/json",
+      "useQueryString": true
+    },
+    "data": {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "lebogang.webdevprojects@gmail.com"
+            }
+          ],
+          "subject": "SendGridAPI  TEST!"
+        }
+      ],
+      "from": {
+        "email": "from_address@example.com"
+      },
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "RapidAPI tutorial"
+        }
+      ]
+    }
+  }
+  

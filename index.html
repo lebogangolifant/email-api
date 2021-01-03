@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SendGrid Email API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-style-2">
+      <div class="form-style-2-heading">
+        SendGrid Email API Demo. <br />
+        <code>"enter your details to test it out"</code>
+      </div>
+      <form action="http://localhost:3000/api/send" method="post">
+        <label for="from-email">
+          <span> From </span>
+          <input
+            type="text"
+            class="input-field"
+            id="from-email"
+            name="fromEmail"
+          />
+        </label>
+        <label for="to-email">
+          <span> To </span>
+          <input type="text" class="input-field" id="to-email" name="toEmail" />
+        </label>
+        <label for="subject">
+          <span> Subject </span>
+          <input type="text" class="input-field" id="subject" name="subject" />
+        </label>
+        <label for="content">
+          <span> Message </span>
+          <textarea
+            id="content"
+            name="content"
+            class="textarea-field"
+          ></textarea>
+        </label>
+        <label><span></span><input type="submit" value="Submit" /></label>
+      </form>
+
+      <p>
+        view code source on
+        <a href="https://github.com/lebogangolifant">GitHub</a>
+      </p>
+    </div>
+  </body>
+</html>
