@@ -5,7 +5,7 @@ const config = require('./config.json');
 const server = express();
 //const port = 3000
 // use the express-static middleware
-server.use(express.static('public'));
+//server.use(express.static('public'));
 
 server.use(express.urlencoded({ extended: true }));
 
