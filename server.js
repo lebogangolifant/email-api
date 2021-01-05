@@ -3,22 +3,23 @@ const sendMail = require('./send');
 const config = require('./config.json');
 
 const server = express();
+const path = require('path');
 //const port = 3000
 // use the express-static middleware
-server.use(express.static('public'));
+//server.use(express.static('public'));
 
-server.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
-server.get('/', (req, res) => {
-  res.send(__dirname + '/index.html');
+app.get('/', (req, res) => {
+  res.send(path.join(__dirname + '/index.html'));
 });
 
-server.get('/api/send', async (req, res) => {
+app.get('/api/send', async (req, res) => {
   const r = await sendMail(config);
   res.send(r);
 });
 
-server.post('/api/send', async (req, res) => {
+app.post('/api/send', async (req, res) => {
   if (req.body.fromEmail.trim()) {
     config.data.from.email = req.body.fromEmail;
   }
@@ -39,6 +40,4 @@ server.post('/api/send', async (req, res) => {
 //console.log(`Server listening at http://localhost:${port}`);
 //});
 // start the server listening for requests
-server.listen(process.env.PORT || 3000, () =>
-  console.log('Server is running...')
-);
+app.listen(process.env.PORT || 3000, () => console.log('Server is running...'));
