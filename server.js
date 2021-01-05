@@ -5,7 +5,7 @@ const config = require('./config.json')
 const server = express()
 const port = 3000
 
-// for parsing application/x-www-form-urlencoded
+
 server.use(express.urlencoded({ extended: true })) 
 
 server.get('/', (req, res) => {
