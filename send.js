@@ -1,5 +1,4 @@
 const axios = require("axios");
-require('dotenv').config()
 module.exports = async function (config) {
   try {
     const r = await axios(config);
