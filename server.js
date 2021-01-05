@@ -2,8 +2,13 @@ const express = require('express')
 const sendMail = require('./send')
 const config = require('./config.json')
 
+// load env variables
+require('dotenv').config()
+
 const server = express()
-const port = 3000
+const PORT = process.env.PORT || 3001;
+
+server.use(express.json());
 
 
 server.use(express.urlencoded({ extended: true })) 
@@ -34,6 +39,6 @@ server.get('/api/send', async (req, res) => {
     res.send(r)
   })
 
-server.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+server.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })
