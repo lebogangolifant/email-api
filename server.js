@@ -8,18 +8,18 @@ const path = require('path');
 // use the express-static middleware
 //server.use(express.static('public'));
 
-app.use(express.urlencoded({ extended: true }));
+server.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
+server.get('/', (req, res) => {
   res.send(path.join(__dirname + '/index.html'));
 });
 
-app.get('/api/send', async (req, res) => {
+server.get('/api/send', async (req, res) => {
   const r = await sendMail(config);
   res.send(r);
 });
 
-app.post('/api/send', async (req, res) => {
+server.post('/api/send', async (req, res) => {
   if (req.body.fromEmail.trim()) {
     config.data.from.email = req.body.fromEmail;
   }
@@ -40,4 +40,6 @@ app.post('/api/send', async (req, res) => {
 //console.log(`Server listening at http://localhost:${port}`);
 //});
 // start the server listening for requests
-app.listen(process.env.PORT || 3000, () => console.log('Server is running...'));
+server.listen(process.env.PORT || 3000, () =>
+  console.log('Server is running...')
+);
