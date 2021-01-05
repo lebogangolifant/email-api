@@ -2,19 +2,14 @@ const express = require('express')
 const sendMail = require('./send')
 const config = require('./config.json')
 
-// load env variables
-require('dotenv').config()
-
 const server = express()
-const PORT = process.env.PORT || 3001;
-
-server.use(express.json());
+const port = 3000
 
 
 server.use(express.urlencoded({ extended: true })) 
 
 server.get('/', (req, res) => {
-  res.send('RapidAPI tutorial')
+  res.send('Email API TEST')
 })
 
 server.get('/api/send', async (req, res) => {
@@ -39,6 +34,6 @@ server.get('/api/send', async (req, res) => {
     res.send(r)
   })
 
-server.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`)
+server.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`)
 })

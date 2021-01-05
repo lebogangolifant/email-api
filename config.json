@@ -4,7 +4,7 @@
     "headers": {
       "content-type": "application/json",
       "x-rapidapi-host": "rapidprod-sendgrid-v1.p.rapidapi.com",
-      "x-rapidapi-key": "process.env.EMAIL_API_KEY",
+      "x-rapidapi-key": "83ac38aa20msh8de3f80d366f8e5p1466e3jsnef213fa98bc5",
       "accept": "application/json",
       "useQueryString": true
     },
@@ -16,7 +16,7 @@
               "email": "lebogang.webdevprojects@gmail.com"
             }
           ],
-          "subject": "SendGridAPI  TEST!"
+          "subject": "Email API TEST!"
         }
       ],
       "from": {
@@ -25,7 +25,7 @@
       "content": [
         {
           "type": "text/plain",
-          "value": "RapidAPI tutorial"
+          "value": "Demo Testing Email Sender-API"
         }
       ]
     }
