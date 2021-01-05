@@ -10,7 +10,7 @@ server.use(express.static('public'));
 server.use(express.urlencoded({ extended: true }));
 
 server.get('/', (req, res) => {
-  res.send(__dirname + 'index.html');
+  res.send(__dirname + '/index.html');
 });
 
 server.get('/api/send', async (req, res) => {
