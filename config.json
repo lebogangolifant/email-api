@@ -4,7 +4,7 @@
     "headers": {
       "content-type": "application/json",
       "x-rapidapi-host": "rapidprod-sendgrid-v1.p.rapidapi.com",
-      "x-rapidapi-key": "process.env.API_KEY",
+      "x-rapidapi-key": "process.env.EMAIL_API_KEY",
       "accept": "application/json",
       "useQueryString": true
     },
